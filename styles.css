@@ -23,3 +23,70 @@ body {
     font-size: 100px;
     text-align: center;
 }
+
+.box-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box-heading > div {
+    font-size: 25px;
+
+}
+
+.heading-title {
+    width: 40%;
+}
+
+.heading-author {
+    width: 30%;
+}
+
+.heading-pages {
+    width: 10%;
+    text-align: center;
+}
+
+.heading-status {
+    width: 20%;
+    text-align: center;
+}
+
+.library-box {
+    font-size: 35px;
+}
+
+.box {
+    padding-top: 10px;
+}
+
+.library-box>div {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.title {
+    width: 40%;
+}
+
+.author {
+    width: 30%;
+}
+
+.pages {
+    width: 10%;
+    text-align: center;
+}
+
+.status {
+    width: 20%;
+    text-align: center;
+}
+
+.library-box>div>div {
+    border: 1px solid black;
+
+}
