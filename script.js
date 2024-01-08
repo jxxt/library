@@ -16,3 +16,16 @@ book1.info()
 function addBookToLibrary() {
     bookArr.push(book1)
 }
+
+
+
+
+
+
+// const testModal = document.querySelector(".test")
+
+// const newBtn = document.querySelector(".add")
+
+// newBtn.addEventListener('click', () => {
+//     testModal.showModal()
+// })

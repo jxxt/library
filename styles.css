@@ -5,12 +5,15 @@
 }
 
 body {
-    background-color: black;
+    /* background-color: black; */
+    /* background-color: #76453B; */
+    background-color: #210e0b;
     color: #B19470;
     height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .img {
@@ -26,6 +29,7 @@ body {
     background-color: #76453B;
     height: 100%;
     width: 60%;
+    display: none;
 }
 
 .heading {
@@ -136,4 +140,29 @@ body {
 .library-functions > div:hover {
     background-color: #76453B;
     cursor: pointer;
+}
+
+.popup {
+    border: 2px white solid;
+    color: #B19470;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    font-size: 30px;
+    width: 35%;
+    height: 40%;
+    padding: 0 25px 0 25px;
+    border-radius: 20px;
+    background-color: #76453B;
+}
+
+.popup > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    background-color: #65372e;
+    color: #B19470;
 }
