@@ -29,3 +29,31 @@ function addBookToLibrary() {
 // newBtn.addEventListener('click', () => {
 //     testModal.showModal()
 // })
+
+
+
+
+
+
+
+
+
+
+const submitButton = document.querySelector(".submit-btn")
+
+const bookTitleInput = document.querySelector(".title-input")
+const bookAuthorInput = document.querySelector(".author-input")
+const bookPagesReadInput = document.querySelector(".pages-read-input")
+const bookTotalPagesInput = document.querySelector(".total-pages-input")
+const bookStatusInput = document.querySelector(".status-input")
+
+let bookTitle
+let bookAuthor
+let bookPagesRead
+let bookTotalPages
+let bookStatus
+
+submitButton.addEventListener("click", () => {
+    bookTitle = bookTitleInput.value
+    console.log(bookTitle)
+})

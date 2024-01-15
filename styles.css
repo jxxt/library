@@ -130,14 +130,14 @@ body {
     justify-content: center;
 }
 
-.library-functions > div {
+.library-functions>div {
     border: 2px solid #B19470;
     padding: 10px;
     border-radius: 10px;
     background-color: #65372e;
 }
 
-.library-functions > div:hover {
+.library-functions>div:hover {
     background-color: #76453B;
     cursor: pointer;
 }
@@ -157,14 +157,17 @@ body {
     background-color: #76453B;
 }
 
-.popup > div {
+.popup>div {
     display: flex;
     justify-content: space-between;
 }
 
 input {
     background-color: #65372e;
-    color: #B19470;
+    color: #ffffff;
+    font-family: 'Lemon', serif;
+    /* font-weight: bold; */
+    /* font-size: 20px; */
 }
 
 .submit-btn {
