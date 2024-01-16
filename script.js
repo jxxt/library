@@ -14,7 +14,7 @@ deleteButton.style.display = "none"
 
 console.log(library.innerHTML)
 if (library.innerHTML == `<div class="msg">no books added!</div>`) {
-    console.log("hkj")
+    console.log("heeeloooo")
 
     heading.style.display = "none"
     msg.style.display = "flex"
@@ -40,7 +40,10 @@ const bookDisplay = () => {
 // bookDisplay()
 
 const resetBookDisplay = () => {
+    for (let i = 0; i < bookArr.length; i++) {
 
+        library.innerHTML = ""
+    }
 }
 
 
@@ -145,20 +148,17 @@ submitButton.addEventListener("click", () => {
 
         console.log(bookArr)
 
-        clearContent();
+        clearContent()
+        resetBookDisplay()
 
         deleteButton.style.display = "flex"
-
 
         showFront()
 
         heading.style.display = "flex"
         msg.style.display = "none"
 
-
         bookDisplay()
-
-
     }
 
     else {
@@ -168,19 +168,12 @@ submitButton.addEventListener("click", () => {
 
 
 
-// const bookDisplay = () => {
-//     for (let i = 0; i < bookArr.length; i++) {
+const addPageButton = document.querySelector("img")
 
-
-//         library.innerHTML += `
-//         <div class="box">
-//             <div class="title">${bookArr[i].title}</div>
-//             <div class="author">${bookArr[i].author}</div>
-//             <div class="pages-with-logo">
-//                 <div class="pages">${bookArr[i].read}</div>
-//                 <div class="icon"><img class="img" src="./assets/add_page_icon.svg" alt=""></div>
-//             </div>
-//             <div class="status">${bookArr[i].status}</div>
-//         </div>`
-//     }
-// }
+if (addPageButton) {
+    console.log("addPageButton")
+    addPageButton.addEventListener("click", () => {
+        let parentEl = addPageButton.parentElement
+        console.log(parentEl)
+    })
+}
