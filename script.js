@@ -1,8 +1,55 @@
 const bookArr = []
 
-let bookCount = 1
+const library = document.querySelector(".library-box")
 
-function Book(title, author, pages, read, status) {
+const heading = document.querySelector(".box-heading")
+
+const msg = document.querySelector(".msg")
+
+const deleteButton = document.querySelector(".library-functions .delete")
+
+deleteButton.style.display = "none"
+
+
+
+console.log(library.innerHTML)
+if (library.innerHTML == `<div class="msg">no books added!</div>`) {
+    console.log("hkj")
+
+    heading.style.display = "none"
+    msg.style.display = "flex"
+}
+
+const bookDisplay = () => {
+    for (let i = 0; i < bookArr.length; i++) {
+
+
+        library.innerHTML += `
+        <div class="box">
+            <div class="title">${bookArr[i].title}</div>
+            <div class="author">${bookArr[i].author}</div>
+            <div class="pages-with-logo">
+                <div class="pages">${bookArr[i].read}</div>
+                <div class="icon"><img class="img" src="./assets/add_page_icon.svg" alt=""></div>
+            </div>
+            <div class="status">${bookArr[i].status}</div>
+        </div>`
+    }
+}
+
+// bookDisplay()
+
+const resetBookDisplay = () => {
+
+}
+
+
+
+
+
+let bookCount = 2
+
+function Book(title, author, read, pages, status) {
     this.title = title
     this.author = author
     this.read = read
@@ -61,7 +108,7 @@ const clearContent = () => {
     bookAuthorInput.value = ""
     bookPagesReadInput.value = ""
     bookTotalPagesInput.value = ""
-    bookStatusInput.value = ""
+    bookStatusInput.value = "Starting"
 }
 
 const showBack = () => {
@@ -89,6 +136,8 @@ submitButton.addEventListener("click", () => {
 
     if (bookTitle && bookAuthor && bookPagesRead && bookTotalPages && bookStatus) {
 
+        bookCount++
+
         book = new Book(bookTitle, bookAuthor, bookPagesRead, bookTotalPages, bookStatus)
         console.log(book.info())
 
@@ -96,9 +145,18 @@ submitButton.addEventListener("click", () => {
 
         console.log(bookArr)
 
-        clearContent;
+        clearContent();
+
+        deleteButton.style.display = "flex"
+
 
         showFront()
+
+        heading.style.display = "flex"
+        msg.style.display = "none"
+
+
+        bookDisplay()
 
 
     }
@@ -107,3 +165,22 @@ submitButton.addEventListener("click", () => {
         alert("nothing should be empty")
     }
 })
+
+
+
+// const bookDisplay = () => {
+//     for (let i = 0; i < bookArr.length; i++) {
+
+
+//         library.innerHTML += `
+//         <div class="box">
+//             <div class="title">${bookArr[i].title}</div>
+//             <div class="author">${bookArr[i].author}</div>
+//             <div class="pages-with-logo">
+//                 <div class="pages">${bookArr[i].read}</div>
+//                 <div class="icon"><img class="img" src="./assets/add_page_icon.svg" alt=""></div>
+//             </div>
+//             <div class="status">${bookArr[i].status}</div>
+//         </div>`
+//     }
+// }
