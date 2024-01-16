@@ -162,12 +162,13 @@ body {
     justify-content: space-between;
 }
 
-input {
+input, select, option {
     background-color: #65372e;
     color: #ffffff;
     font-family: 'Lemon', serif;
     /* font-weight: bold; */
     /* font-size: 20px; */
+    width: 180px;
 }
 
 .submit-btn {

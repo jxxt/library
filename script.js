@@ -1,20 +1,21 @@
 const bookArr = []
 
-function Book(title, author, pages, read) {
+let bookCount = 1
+
+function Book(title, author, pages, read, status) {
     this.title = title
     this.author = author
-    this.pages = pages
     this.read = read
+    this.pages = pages
+    this.status = status
     this.info = function () {
-        console.log(this.title)
+        return this.status
     }
 }
 
-book1 = new Book(1, 2, 3, 4)
-book1.info()
 
 function addBookToLibrary() {
-    bookArr.push(book1)
+
 }
 
 
@@ -53,7 +54,36 @@ let bookPagesRead
 let bookTotalPages
 let bookStatus
 
+const clearContent = () => {
+    bookTitleInput.value = ""
+    bookAuthorInput.value = ""
+    bookPagesReadInput.value = ""
+    bookTotalPagesInput.value = ""
+    bookStatusInput.value = ""
+}
+
 submitButton.addEventListener("click", () => {
     bookTitle = bookTitleInput.value
-    console.log(bookTitle)
+    bookAuthor = bookAuthorInput.value
+    bookPagesRead = bookPagesReadInput.value
+    bookTotalPages = bookTotalPagesInput.value
+    bookStatus = bookStatusInput.value
+    // console.log(bookTitle)
+
+    if (bookTitle && bookAuthor && bookPagesRead && bookTotalPages && bookStatus) {
+
+        book = new Book(bookTitle, bookAuthor, bookPagesRead, bookTotalPages, bookStatus)
+        console.log(book.info())
+
+        bookArr.push(book)
+
+        console.log(bookArr)
+
+        clearContent;
+
+    }
+
+    else {
+        alert("nothing should be empty")
+    }
 })
