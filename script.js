@@ -33,8 +33,10 @@ function addBookToLibrary() {
 
 
 
+const front = document.querySelector(".main-container")
+const back = document.querySelector(".popup")
 
-
+const addButton = document.querySelector(".add")
 
 
 
@@ -62,6 +64,21 @@ const clearContent = () => {
     bookStatusInput.value = ""
 }
 
+const showBack = () => {
+    front.style.display = "none"
+    back.style.display = "flex"
+}
+
+const showFront = () => {
+    front.style.display = null
+    back.style.display = "none"
+}
+
+
+addButton.addEventListener("click", () => {
+    showBack()
+})
+
 submitButton.addEventListener("click", () => {
     bookTitle = bookTitleInput.value
     bookAuthor = bookAuthorInput.value
@@ -80,6 +97,9 @@ submitButton.addEventListener("click", () => {
         console.log(bookArr)
 
         clearContent;
+
+        showFront()
+
 
     }
 
